@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box ;
+  margin: 0;
+  padding: 0;
+}
+ 
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+ 
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(3deg, rgba(13, 13, 15, 1) 35%, rgba(20, 20, 22, 1) 100%);
+  background-image: url(./components/img/fondoHoddie.jpg);
+  background-size: auto;
+  color: #f8f6f6;
+  width: 100%;
+
+ 
+}
