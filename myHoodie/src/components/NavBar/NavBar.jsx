@@ -1,3 +1,4 @@
+import {Link, NavLink} from "react-router-dom"
 import CartWidget from "../CartWidget/CartWidget";
 
 
@@ -7,21 +8,21 @@ const NavBar = () => {
         <nav className="navbar bg-dark navbar-expand-lg bg-body-tertiary transparent-bg" data-bs-theme="dark">
             <div className="container-fluid">
                 {/* MARCA  */}
-                <a className="navbar-brand" href="#">My Hoodie</a>
+                <Link to="/" className="navbar-brand">My Hoodie</Link>
 
                 {/* ITEM LIST CONTAINER */}
                 <ul className="navbar-nav">
+                    {/* <li className="nav-item h5">
+                        <NavLink to="/" className="nav-link">Inicio</NavLink>
+                    </li> */}
                     <li className="nav-item h5">
-                        <a className="nav-link" href="#">Inicio</a>
+                        <NavLink to="/hoodies" className="nav-link">Hoodies</NavLink>
                     </li>
                     <li className="nav-item h5">
-                        <a className="nav-link" href="#">Hoodies Lisos</a>
+                        <NavLink to="/remeras" className="nav-link">Remeras</NavLink>
                     </li>
                     <li className="nav-item h5">
-                        <a className="nav-link" href="#">Hoodies Estampados</a>
-                    </li>
-                    <li className="nav-item h5">
-                        <a className="nav-link" href="#">Camperas</a>
+                        <NavLink to="/camperas" className="nav-link">Camperas</NavLink>
                     </li>
                 </ul>
 
