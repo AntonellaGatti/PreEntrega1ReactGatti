@@ -11,34 +11,58 @@ const productos = [
 ]
 
 
-// FUNCIONES - PROMESESAS
 
-const getProductos = (id) => {
+
+
+
+// FUNCIONES - PROMESESAS
+// get product
+export const getProductos = (id) => {
 
     return new Promise((resolve, reject) => {
-        const producto = productos.find(producto => producto.id === id)
 
-        if (producto){
-            resolve (producto)
-        } else {
-            reject("El producto buscado no se encuentra disponible")
-        }
+        // simulacion llamada a Backend
+        setTimeout(() => {
+
+            const producto = productos.find(producto => producto.id === id)
+
+            if (producto) {
+                resolve(producto)
+            } else {
+                reject("El producto buscado no se encuentra disponible")
+            }
+
+
+        }, 2000)
     })
 }
 
 
-const getCategorias = (categoria) => {
+
+
+//get products
+export const getCategorias = (categoria) => {
+
     return new Promise((resolve, reject) => {
-        const productosCategoria = productos.filter(producto => producto.categoria === categoria);
 
-        if (productosCategoria.length > 0) {
+        setTimeout(() => {
+
+            let productosCategoria
+
+            if (categoria) {
+                productosCategoria = productos.filter(producto => producto.categoria === categoria)
+            } else {
+                productosCategoria = productos;
+            }
+
             resolve(productosCategoria);
-        } else {
-            reject(("No se encontraron productos en esta categoría"));
-        }
-    });
 
+        }, 2000)
+
+    });
 
 }
 
-export default getProductos ; getCategorias
+export default getCategorias
+
+

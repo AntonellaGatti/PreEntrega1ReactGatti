@@ -13,9 +13,9 @@ function App() {
 
     
       <Routes>
-        <Route path="/" element={<ItemListContainer greeting="Bienvenidos a My Hoodie!"/> } >Inicio</Route>
-        <Route path="/categoria/:id" component={ItemListContainer} />
-        <Route path="/item/:id" component={ItemDetailContainer} />
+        <Route path="/" element={<ItemListContainer/> } >Inicio</Route>
+        <Route path="/categoria/:idCategoria"  element={<ItemListContainer/>} />
+        <Route path="/item/:id" element={<ItemListContainer/>} />
       </Routes>
 
     </div>

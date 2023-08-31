@@ -1,9 +1,16 @@
 .custom-card {
     background-color: rgba(0, 0, 0, 0.7);
     margin: 10px;
+    padding: 15px;
     color: beige;
     border-color: black;
     -webkit-box-shadow: 10px 10px 17px -2px rgba(99, 99, 93, 1);
     -moz-box-shadow: 10px 10px 17px -2px rgba(99, 99, 93, 1);
     box-shadow: 10px 10px 17px -2px rgba(99, 99, 93, 1);
+}
+
+.custom-list {
+    position: relative;
+    top: 10vh;
+
 }

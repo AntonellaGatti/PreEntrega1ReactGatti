@@ -1,6 +1,7 @@
 // Maneja la Lógica
 
 import { useState,useEffect } from "react";
+import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
 import getCategoria from "../services";
 
@@ -8,13 +9,15 @@ import getCategoria from "../services";
 
 const ItemListContainer = () => {
     const [items, setItems] = useState([]);
+    const {idCategoria} = useParams()
 
+
+    // se ejecuta cuando el componente se carga
     useEffect(() => {
-         getCategoria()
-         .then((response) => (console.log(response)))
-    } ,[])
-
-
+         getCategoria(idCategoria)
+         .then((response) => (setItems(response)))
+         .catch((error) => (console.log(error)))
+    } ,[idCategoria])
 
 
 
