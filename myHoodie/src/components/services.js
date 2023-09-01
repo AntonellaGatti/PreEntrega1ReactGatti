@@ -33,7 +33,7 @@ export const getProductos = (id) => {
             }
 
 
-        }, 2000)
+        }, 1000)
     })
 }
 
@@ -57,7 +57,7 @@ export const getCategorias = (categoria) => {
 
             resolve(productosCategoria);
 
-        }, 2000)
+        }, 1000)
 
     });
 
