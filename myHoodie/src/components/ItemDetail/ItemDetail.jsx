@@ -1,5 +1,7 @@
 // Contenedor de Presentacion 
-import ItemQuantitySelectorContainer from "./ItemQuantitySelectorContainer";
+import ItemQuantitySelector from "./ItemQuantitySelector";
+import CartContext from "../Context/CartContext";
+import { useContext } from "react";
 import styles from "./ItemDetail.module.css"
 
 const ItemDetail = ({item}) => {
@@ -15,7 +17,7 @@ const ItemDetail = ({item}) => {
             <h4>{item.nombre}</h4>
             <p>Categoria del Producto: {item.categoria}</p>
             <p>Precio: AR$ {item.precio}</p>
-            <ItemQuantitySelectorContainer/>
+            <ItemQuantitySelector/>
             </div>
         </div>
     )

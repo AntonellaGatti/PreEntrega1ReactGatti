@@ -66,3 +66,14 @@ export const getCategorias = (categoria) => {
 export default getCategorias
 
 
+export const getCartQuantity = (cart) => {
+
+    let count = 0
+
+    count.forEach((item) => {
+        count + item.quantity
+    });
+
+    return count;
+
+}

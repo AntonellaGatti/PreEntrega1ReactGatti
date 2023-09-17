@@ -1,23 +1,31 @@
 // Maneja Logica
-import { useState } from "react";
+import { useState, useContext } from "react";
 import ItemQuantitySelector from "./ItemQuantitySelector";
+import CartContext from "../Context/CartContext";
 
 
-const ItemQuantitySelectorContainer = () => {
+const ItemQuantitySelectorContainer = ({item}) => {
     const [count, SetCount] = useState(0);
+
+    const { addItemCarrito } = useContext(CartContext); 
+
+    const handleAddToCart = () => {
+        addItemCarrito(item, count); 
+    }
 
     const Incrementar = () => {
         SetCount(count +1)
-        console.log(count)
 
     }
 
     const Reducir = () => {
-        if (count > 1) { // Agrega una validación para que el contador no baje de 1
+        if (count >= 1) { 
             SetCount(count - 1);
         }
 
     }
+
+ 
     // TODO -- VALIDACION STOCK
 
     return ( 
@@ -25,6 +33,8 @@ const ItemQuantitySelectorContainer = () => {
         count={count}
         Incrementar={Incrementar}
         Reducir= {Reducir}
+        item={item}
+        handleAddToCart={handleAddToCart}
         />
 
     )

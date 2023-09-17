@@ -1,6 +1,9 @@
 // Contenedor de Presentacion 
 
-const ItemQuantitySelector = ({count, Incrementar, Reducir}) => {
+
+const ItemQuantitySelector = ({count, Incrementar, Reducir,handleAddToCart}) => {
+
+
     return (
         <div className="mt-5">
             <label className="label">Cantidad:</label>
@@ -24,8 +27,8 @@ const ItemQuantitySelector = ({count, Incrementar, Reducir}) => {
                             +
                         </button>
                     </div>
-                </div>
-                <button type="button" className="btn btn-light mt-5 px-5">Agregar Item al Carrito</button>
+                </div> 
+                <button type="button" className="btn btn-light mt-5 px-5" onClick={handleAddToCart}>Agregar Item al Carrito</button>
                 
             </div>
         </div>
