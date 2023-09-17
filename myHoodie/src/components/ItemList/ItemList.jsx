@@ -11,7 +11,10 @@ const ItemList = ({ item }) => {
     return (
         <div className="container-fluid mt-5">
             <div className="display text-center align-self-start">
-                <h1 className="container-fluid mt-5">Nuestr@s {idCategoria}</h1>
+                <h1 className="container-fluid mt-5">
+                    
+                {idCategoria ? `Nuestr@s ${idCategoria}` : 'Nuestr@s Productos'}
+                </h1>
             </div>
             <ul className={`row justify-content-around ${styles['custom-list']}`}>
                 {item.map((item) => (
