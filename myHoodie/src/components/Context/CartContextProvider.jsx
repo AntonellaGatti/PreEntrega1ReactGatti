@@ -6,25 +6,25 @@ const CartContextProvider = ({ children }) => {
     const [cart, setCart] = useState([])
 
     const addItemCarrito = (item, cantidad) => {
-        const itemEnCarrito = cart.find((item) => item.id === item.id);
+        const itemEnCarrito = cart.find((i) => i.id === item.id);
 
         if (itemEnCarrito) {
-            const newCart = cart.map((item) => {
-                if (item.id === item.id) {
+            const newCart = cart.map((prod) => {
+                if (prod.id === prod.id) {
                     return {
-                        ...item,
-                        cantidad: item.cantidad + cantidad,
+                        ...prod,
+                        cantidad: prod.cantidad + cantidad,
                     };
                 }
-                return item;
+                return prod;
             });
             setCart(newCart);
         } else {
             setCart([...cart, { ...item, cantidad }]);
         }
-        console.log(cart)
     };
-
+    
+    console.log(cart)
 
 
     function removeItemCarrito(itemId) {

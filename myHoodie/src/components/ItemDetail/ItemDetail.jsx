@@ -1,5 +1,5 @@
 // Contenedor de Presentacion 
-import ItemQuantitySelector from "./ItemQuantitySelector";
+import ItemQuantitySelectorContainer from "./ItemQuantitySelectorContainer";
 import styles from "./ItemDetail.module.css"
 
 const ItemDetail = ({item}) => {
@@ -15,7 +15,7 @@ const ItemDetail = ({item}) => {
             <h4>{item.nombre}</h4>
             <p>Categoria del Producto: {item.categoria}</p>
             <p>Precio: AR$ {item.precio}</p>
-            <ItemQuantitySelector item={item}/>
+            <ItemQuantitySelectorContainer item={item}/>
             </div>
         </div>
     )

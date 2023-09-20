@@ -22,10 +22,10 @@ const ItemQuantitySelectorContainer = ({item}) => {
         }
 
     }
-    
+
  const handleAddToCart = () => {
         addItemCarrito(item, count); 
-        setCount(0);
+        SetCount(0);
     }
  
     // TODO -- VALIDACION STOCK
