@@ -12,9 +12,6 @@ const productos = [
 
 
 
-
-
-
 // FUNCIONES - PROMESESAS
 // get product
 export const getProductos = (id) => {

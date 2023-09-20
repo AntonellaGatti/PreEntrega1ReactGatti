@@ -9,9 +9,7 @@ const ItemQuantitySelectorContainer = ({item}) => {
 
     const { addItemCarrito } = useContext(CartContext); 
 
-    const handleAddToCart = () => {
-        addItemCarrito(item, count); 
-    }
+   
 
     const Incrementar = () => {
         SetCount(count +1)
@@ -24,7 +22,11 @@ const ItemQuantitySelectorContainer = ({item}) => {
         }
 
     }
-
+    
+ const handleAddToCart = () => {
+        addItemCarrito(item, count); 
+        setCount(0);
+    }
  
     // TODO -- VALIDACION STOCK
 

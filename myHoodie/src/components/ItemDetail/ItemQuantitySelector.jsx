@@ -3,7 +3,6 @@
 
 const ItemQuantitySelector = ({count, Incrementar, Reducir,handleAddToCart}) => {
 
-
     return (
         <div className="mt-5">
             <label className="label">Cantidad:</label>

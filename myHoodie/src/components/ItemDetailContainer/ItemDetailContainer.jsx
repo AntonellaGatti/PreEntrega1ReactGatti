@@ -3,11 +3,13 @@ import { useState, useEffect,useContext } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import {getProductos} from "../services";
+import CartContext from "../Context/CartContext";
 
 
 const ItemDetailContainer = () => {
     const [item, setItem] = useState(null)
     const { id } = useParams()
+    let context = useContext(CartContext)
 
 
     useEffect(() => {
