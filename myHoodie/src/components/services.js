@@ -68,9 +68,10 @@ export const getCartQuantity = (cart) => {
     let count = 0
 
     cart.forEach((item) => {
-        count + item.quantity
+        count += item.cantidad
     });
 
     return count;
 
 }
+
