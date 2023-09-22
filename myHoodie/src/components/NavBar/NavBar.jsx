@@ -1,4 +1,4 @@
-import {Link, NavLink} from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import CartWidget from "../CartWidget/CartWidget";
 
 
@@ -25,15 +25,16 @@ const NavBar = () => {
                         <NavLink to="/categoria/camperas" className="nav-link">Camperas</NavLink>
                     </li>
                 </ul>
-
-            
                 <form class="d-flex" role="search">
-                    <input class="form-control me-4" type="search" placeholder="..." aria-label="Search"/>
-                        <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+                    <input class="form-control me-4" type="search" placeholder="..." aria-label="Search" />
+                    <button class="btn btn-outline-secondary" type="submit">Buscar</button>
                 </form>
 
                 {/* CARTWIDGET */}
-                <CartWidget />
+                <NavLink to="/cart" className="nav-link">
+                    <CartWidget />
+                </NavLink>
+
             </div>
 
         </nav>

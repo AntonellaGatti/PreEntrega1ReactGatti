@@ -28,8 +28,9 @@ const CartContextProvider = ({ children }) => {
 
 
     function removeItemCarrito(itemId) {
-        setCartLista(cart.filter(item => item.id !== itemId))
+        setCart(cart.filter(item => item.id !== itemId))
     }
+   
     function vaciarCarrito() {
         setCart([])
     }

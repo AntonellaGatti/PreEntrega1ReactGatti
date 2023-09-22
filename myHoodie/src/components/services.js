@@ -1,14 +1,19 @@
-const productos = [
-    { id: "1", nombre: "Hoodie Oversize Snow Negro", precio: 35000, categoria: "hoodies" },
-    { id: "2", nombre: "Hoodie Oversize Snow Tinto", precio: 35000, categoria: "hoodies" },
-    { id: "3", nombre: "Hoodie Lienzo Negro", precio: 27000, categoria: "hoodies" },
-    { id: "4", nombre: "Hoodie Lienzo Blanco", precio: 27000, categoria: "hoodies" },
-    { id: "5", nombre: "Remera Oversize Rubi Negra", precio: 13000, categoria: "remeras" },
-    { id: "6", nombre: "Remera Ana White", precio: 13000, categoria: "remeras" },
-    { id: "7", nombre: "Remera Kush Gris", precio: 13000, categoria: "remeras" },
-    { id: "8", nombre: "Campera Rompeviento Negra", precio: 40000, categoria: "camperas" },
+import { doc, getDoc, collection, getDocs, query, getFirestore, where } from "firebase/firestore";
 
-]
+
+
+// const productos = [
+//     // { id: "1", nombre: "Hoodie Oversize Snow Negro", precio: 35000, categoria: "hoodies" },
+//     // { id: "2", nombre: "Hoodie Oversize Snow Tinto", precio: 35000, categoria: "hoodies" },
+//     // { id: "3", nombre: "Hoodie Lienzo Negro", precio: 27000, categoria: "hoodies" },
+//     // { id: "4", nombre: "Hoodie Lienzo Blanco", precio: 27000, categoria: "hoodies" },
+//     // { id: "5", nombre: "Remera Oversize Rubi Negra", precio: 13000, categoria: "remeras" },
+//     // { id: "6", nombre: "Remera Ana White", precio: 13000, categoria: "remeras" },
+//     // { id: "7", nombre: "Remera Kush Gris", precio: 13000, categoria: "remeras" },
+//     // { id: "8", nombre: "Campera Rompeviento Negra", precio: 40000, categoria: "camperas" },
+
+// ]
+
 
 
 
@@ -17,18 +22,26 @@ const productos = [
 export const getProductos = (id) => {
 
     return new Promise((resolve, reject) => {
-
         // simulacion llamada a Backend
         setTimeout(() => {
+            const db = getFirestore();
+            const itemDoc = doc(db, "productos", id);
 
-            const producto = productos.find(producto => producto.id === id)
+            getDoc(itemDoc)
+                .then((doc) => {
 
-            if (producto) {
-                resolve(producto)
-            } else {
-                reject("El producto buscado no se encuentra disponible")
-            }
-
+                    if (doc.exists()) {
+                        resolve({
+                            id: doc.id,
+                            ...doc.data(),
+                        });
+                    } else {
+                        resolve(null);
+                    };
+                })
+                .catch((error) => {
+                    reject(error)
+                })
 
         }, 1000)
     })
@@ -41,18 +54,31 @@ export const getProductos = (id) => {
 export const getCategorias = (categoria) => {
 
     return new Promise((resolve, reject) => {
-
         setTimeout(() => {
+            const db = getFirestore();
 
-            let productosCategoria
+            const productsCollection = collection(db, 'productos');
 
+            let q
             if (categoria) {
-                productosCategoria = productos.filter(producto => producto.categoria === categoria)
+                q = query(productsCollection, where("categoria", "==", categoria));
             } else {
-                productosCategoria = productos;
+                q = query(productsCollection);
             }
 
-            resolve(productosCategoria);
+            getDocs(q)
+                .then((querySnapshot) => {
+                    const products = querySnapshot.docs.map((doc) => {
+                        return {
+                            id: doc.id,
+                            ...doc.data()
+                        };
+                    });
+                    resolve(products)
+                })
+                .catch((error) => {
+                    reject(error)
+                })
 
         }, 1000)
 
@@ -74,4 +100,21 @@ export const getCartQuantity = (cart) => {
     return count;
 
 }
+
+export const calculateTotalCart = (cart) => {
+
+    let total = 0
+
+    cart.forEach((item) => {
+        total += item.cantidad * item.precio
+    });
+
+    return total;
+
+}
+
+
+
+
+
 

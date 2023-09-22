@@ -20,7 +20,7 @@ const ItemList = ({ item }) => {
                 {item.map((item) => (
                     <li key={item.id} className={`list-group-item justify-content-around col-md-2 mb-4 rounded ${styles['custom-card']}`}>
                         <Link to={`/item/${item.id}`}>
-                            <img src={`/imgPublic/${item.id}.jpg`} className="img-fluid" />
+                            <img src={`../imgPublic/${item.imageId}.jpg`} className="img-fluid" />
                             <h4>{item.nombre}</h4>
                             <p>Categoria del Producto: {item.categoria}</p>
                             <p>Precio: AR$ {item.precio}</p>

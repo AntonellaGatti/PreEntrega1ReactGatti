@@ -1,0 +1,14 @@
+.custom-card-cart {
+    background-color: rgba(0, 0, 0, 0.7);
+    margin: 10px;
+    padding: 15px;
+    color: beige;
+    width: 300px;
+    border-color: black;
+}
+
+
+.img-detail-cart {
+    max-width: 100px;
+}
+

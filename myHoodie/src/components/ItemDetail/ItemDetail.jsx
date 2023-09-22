@@ -10,7 +10,7 @@ const ItemDetail = ({item}) => {
 
     return (
         <div className={`d-flex flex-column flex-md-row align-items-center justify-content-around justify-content-around  rounded ${styles['card-detail']}`}>
-            <img src={`/imgPublic/${item.id}.jpg`} className={`img-fluid ${styles['img-detail']}`} />
+            <img src={`../imgPublic/${item.imageId}.jpg`} className={`img-fluid ${styles['img-detail']}`} />
             <div>
             <h4>{item.nombre}</h4>
             <p>Categoria del Producto: {item.categoria}</p>
@@ -22,3 +22,6 @@ const ItemDetail = ({item}) => {
 }
 
 export default ItemDetail
+
+
+// `../imgPublic/${item.imageId}`
