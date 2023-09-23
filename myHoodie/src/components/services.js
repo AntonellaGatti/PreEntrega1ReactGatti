@@ -88,7 +88,7 @@ export const getCategorias = (categoria) => {
 
 export default getCategorias
 
-
+// total productos en carrito
 export const getCartQuantity = (cart) => {
 
     let count = 0
@@ -101,6 +101,7 @@ export const getCartQuantity = (cart) => {
 
 }
 
+// total precio carrito
 export const calculateTotalCart = (cart) => {
 
     let total = 0
@@ -110,11 +111,17 @@ export const calculateTotalCart = (cart) => {
     });
 
     return total;
-
 }
 
-
-
+// map Items Carrito para completar la Orden
+ export const mapCartToOrder = (cart) => {
+    return cart.map(item => ({
+        nombre: item.id.nombre,
+        id: item.id.id,
+        cantidad: item.cantidad,
+        precio: item.id.precio,
+    }));
+};
 
 
 
