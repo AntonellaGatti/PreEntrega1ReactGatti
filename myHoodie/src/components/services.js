@@ -116,10 +116,10 @@ export const calculateTotalCart = (cart) => {
 // map Items Carrito para completar la Orden
  export const mapCartToOrder = (cart) => {
     return cart.map(item => ({
-        nombre: item.id.nombre,
-        id: item.id.id,
+        nombre: item.nombre,
+        id: item.id,
         cantidad: item.cantidad,
-        precio: item.id.precio,
+        precio: item.precio,
     }));
 };
 
