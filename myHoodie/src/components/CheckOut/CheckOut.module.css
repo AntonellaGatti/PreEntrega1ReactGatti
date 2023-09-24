@@ -10,3 +10,18 @@
 .checkout-img {
     max-width: 60px;
 }
+
+.btn-cart {
+    display: flex;
+    margin: 10px;
+    padding: 5px;
+    width: 250px;
+    height: auto;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap
+}
+
+.icons-cart {
+    font-size: 24px;
+}

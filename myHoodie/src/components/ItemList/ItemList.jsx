@@ -9,14 +9,16 @@ import { useParams } from "react-router-dom";
 const ItemList = ({ item }) => {
     const { idCategoria } = useParams()
     return (
-        <div className="container-fluid mt-5">
+        <div className="container-fluid mt-2">
             <div className="display text-center align-self-start">
-                <h1 className="container-fluid mt-5">
-                    
-                {idCategoria ? `Nuestr@s ${idCategoria}` : 'Nuestr@s Productos'}
+                <h1 className="container-fluid mt-1">
+                {idCategoria 
+                ? `Nuestr@s ${idCategoria}` 
+                : 'Nuestr@s Productos'}
                 </h1>
             </div>
-            <ul className={`row justify-content-around ${styles['custom-list']}`}>
+            <div>
+                <ul className={`row justify-content-around ${styles['custom-list']}`}>
                 {item.map((item) => (
                     <li key={item.id} className={`list-group-item justify-content-around col-md-2 mb-4 rounded ${styles['custom-card']}`}>
                         <Link to={`/item/${item.id}`}>
@@ -28,6 +30,8 @@ const ItemList = ({ item }) => {
                     </li>
                 ))}
             </ul>
+            </div>
+            
         </div>
     );
 }

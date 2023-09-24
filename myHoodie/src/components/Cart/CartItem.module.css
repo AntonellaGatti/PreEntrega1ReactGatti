@@ -12,3 +12,17 @@
     max-width: 100px;
 }
 
+.btn-cart {
+    display: flex;
+    margin: 8px;
+    padding: 5px;
+    width: 250px;
+    height: auto;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap
+}
+
+.icons-cart {
+    font-size: 24px;
+}
