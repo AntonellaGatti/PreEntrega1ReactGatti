@@ -61,7 +61,7 @@ const CheckOut = () => {
         <div>
             <h1>CheckOut</h1>
             {orderId
-                ? (<h2 className={`text-center pt-5 mb-0`}> Gracias por tu compra! <br/> Tu Orden fue generada con el id: {orderId}</h2>)
+                ? (<h2 className={`text-center pt-5 mb-0`}> Gracias por tu compra! <br/> Tu Orden fue generada con el id: {orderId} A la brevedad nos estaremos contactando con los datos para la transferencia</h2>)
                 : (
                     <>
                         <h2>Detalle de la compra</h2>

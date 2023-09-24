@@ -23,5 +23,3 @@ const ItemDetail = ({item}) => {
 
 export default ItemDetail
 
-
-// `../imgPublic/${item.imageId}`
