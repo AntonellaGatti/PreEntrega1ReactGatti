@@ -26,7 +26,7 @@ export const getProductos = (id) => {
                     reject(error)
                 })
 
-        }, 1000)
+        }, 500)
     })
 }
 
@@ -62,7 +62,7 @@ export const getCategorias = (categoria) => {
                     reject(error)
                 })
 
-        }, 1000)
+        }, 500)
 
     });
 
