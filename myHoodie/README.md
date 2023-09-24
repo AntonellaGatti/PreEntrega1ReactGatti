@@ -28,7 +28,7 @@ Después de completar una compra, los usuarios tienen la opción de visualizar i
  
  4. Se abrirá en el navegador el link indicado por la consola ➜  Local: http://localhost:5174/
 
-4. Para el correcto funcionamiento del proyecto se deberá contar con las variables de entorno seteadas en el archivo .env. Las mismas son: 
+4. Para el correcto funcionamiento del proyecto se deberá contar con las variables de entorno seteadas en el archivo `.env`. Las mismas son: 
 	-   `VITE_API_KEY`: API key de Firebase
 	-   `VITE_AUTH_DOMAIN`: Dominio de autenticación de Firebase
 	-   `VITE_PROJECT_ID`: ID del proyecto de Firebase

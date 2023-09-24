@@ -1,28 +1,11 @@
 import { doc, getDoc, collection, getDocs, query, getFirestore, where } from "firebase/firestore";
 
 
-
-// const productos = [
-//     // { id: "1", nombre: "Hoodie Oversize Snow Negro", precio: 35000, categoria: "hoodies" },
-//     // { id: "2", nombre: "Hoodie Oversize Snow Tinto", precio: 35000, categoria: "hoodies" },
-//     // { id: "3", nombre: "Hoodie Lienzo Negro", precio: 27000, categoria: "hoodies" },
-//     // { id: "4", nombre: "Hoodie Lienzo Blanco", precio: 27000, categoria: "hoodies" },
-//     // { id: "5", nombre: "Remera Oversize Rubi Negra", precio: 13000, categoria: "remeras" },
-//     // { id: "6", nombre: "Remera Ana White", precio: 13000, categoria: "remeras" },
-//     // { id: "7", nombre: "Remera Kush Gris", precio: 13000, categoria: "remeras" },
-//     // { id: "8", nombre: "Campera Rompeviento Negra", precio: 40000, categoria: "camperas" },
-
-// ]
-
-
-
-
 // FUNCIONES - PROMESESAS
-// get product
+
 export const getProductos = (id) => {
 
     return new Promise((resolve, reject) => {
-        // simulacion llamada a Backend
         setTimeout(() => {
             const db = getFirestore();
             const itemDoc = doc(db, "productos", id);
@@ -50,7 +33,6 @@ export const getProductos = (id) => {
 
 
 
-//get products
 export const getCategorias = (categoria) => {
 
     return new Promise((resolve, reject) => {
