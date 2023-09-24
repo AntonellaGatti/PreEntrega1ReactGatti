@@ -20,13 +20,15 @@ Después de completar una compra, los usuarios tienen la opción de visualizar i
      `https://github.com/AntonellaGatti/ProyectoFinalReactGatti.git`
 
 2. Ingresar a la carpeta del proyecto e instalar las dependencias
+   
     `cd myHoodie`
     `npm install`
 
-3. Levantar el proyecto en el local host con el comando
+4. Levantar el proyecto en el local host con el comando
+   
     `npm run dev`
  
- 4. Se abrirá en el navegador el link indicado por la consola ➜  Local: http://localhost:5174/
+ 5. Se abrirá en el navegador el link indicado por la consola ➜  Local: http://localhost:5174/
 
 4. Para el correcto funcionamiento del proyecto se deberá contar con las variables de entorno seteadas en el archivo .env. Las mismas son: 
 	-   `VITE_API_KEY`: API key de Firebase
