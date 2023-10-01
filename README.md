@@ -41,4 +41,9 @@ Después de completar una compra, los usuarios tienen la opción de visualizar i
 	-   `VITE_APP_ID`: ID de la aplicación de Firebase
 
 ## Demo
+
+
+https://github.com/AntonellaGatti/ProyectoFinalReactGatti/assets/123515284/5f1dd287-efa3-4020-8234-787a4fcf5780
+
+
  
